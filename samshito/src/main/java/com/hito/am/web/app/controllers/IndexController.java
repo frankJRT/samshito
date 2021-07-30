@@ -33,7 +33,7 @@ public class IndexController {
 
 	@RequestMapping("/listar")
 	public String listado(Model model) {
-		
+
 		model.addAttribute("usuarios", poblarUsuarios());
 		return "listar";
 	}

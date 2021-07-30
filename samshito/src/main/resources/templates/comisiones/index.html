@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{/comisiones}" method="post">
+		<label for="fname">Cartera:</label><br> <input type="text"
+			id="cartera" name="cartera"><br> <label for="lname">Periodo:</label><br>
+		<input type="text" id="periodo" name="periodo"><br>
+		<input type="submit" value="Enviar" />
+	</form>
+
+</body>
+</html>
