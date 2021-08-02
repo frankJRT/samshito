@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de Catalogos</title>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3>Listado de Catalogos de Comportamiento</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Alta</th>
+							<th scope="col">nombre</th>
+							<th scope="col">Clave</th>
+							<th scope="col">Descripcion</th>
+							<th scope="col">Tipo Dato</th>
+							<th scope="col">Estatus</th>
+							<th scope="col">Detalle</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="catalogo : ${catalogos}">
+							<th scope="row" th:text="${catalogo.i_Catalogo_Comportamiento}"></th>
+							<td th:text="${catalogo.d_Catalogo_Comportamiento}"></td>
+							<td th:text="${catalogo.n_Catalogo_Comportamiento}"></td>
+							<td th:text="${catalogo.n_Catalogo_Comportamiento_Clave}"></td>
+							<td th:text="${catalogo.e_Catalogo_Comportamiento_Decripcion}"></td>
+							<td th:text="${catalogo.e_Catalogo_Comportamiento_Tipo_Dato}"></td>
+							<td th:text="${catalogo.x_Catalogo_Comportamiento_Status}"></td>
+							<td><a
+								th:href="@{/cartera/elementoscatalogo(id=${catalogo.i_Catalogo_Comportamiento},nombre=${catalogo.n_Catalogo_Comportamiento})}"
+								class="btn btn-success"> <i
+									class="fa fa-arrow-circle-o-left"></i>detalle
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h6>Listado de Catalogos de Comportamiento</h6>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid"></div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

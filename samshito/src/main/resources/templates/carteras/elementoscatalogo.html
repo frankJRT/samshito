@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}"></title>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3 th:text="${title}"></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Alta</th>
+							<th scope="col">nombre</th>
+							<th scope="col">Clave</th>
+							<th scope="col">Descripcion</th>
+							<th scope="col">Estatus</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="elemento : ${elementos}">
+							<th scope="row" th:text="${elemento.i_Elemento_Catalogo_Comportamiento}"></th>
+							<td th:text="${elemento.d_Elemento_Catalogo_Comportamiento}"></td>
+							<td th:text="${elemento.e_Elemento_Catalogo_Comportamiento_Decripcion}"></td>
+							<td th:text="${elemento.n_Elemento_Catalogo_Comportamiento_Clave}"></td>
+							<td th:text="${elemento.n_Elemento_Catalogo_Comportamiento}"></td>
+							<td th:text="${elemento.x_Elemento_Catalogo_Comportamiento_Status}"></td>					
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h6>Elementos de catalogo</h3>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid"></div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

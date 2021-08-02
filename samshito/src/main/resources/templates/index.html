@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8"/>
-	<title  th:text="${title}"></title>
-</head>
+  <head>
+    <title>Hito - Administracion Maestra </title>
+    
+      <!--
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+     <script th:src="@{/js/bootstrap.min.js}"></script>
+     -->
+      <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+     
+	</head>
+  <body>
+    
+<div th:replace="fragments/header :: header"></div>
+    <main role="main">
+		
+		
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">HITO SERVICING</h1>
+          <p class="lead text-muted">Sitio interno de HITO</p>
+          <p>
+            <a href="/user" th:href="@{/user}" class="btn btn-primary my-2">Entrar al portal</a>
+          </p>
+        </div>
+      </section>
 
-<body>
-	<h1 th:text="${title}"></h1>
-</body>
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Agregue algo de interes.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Autor:</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Agregue algo de interes.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Autor:</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Agregue algo de interes.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Autor:</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+  </body>
 </html>

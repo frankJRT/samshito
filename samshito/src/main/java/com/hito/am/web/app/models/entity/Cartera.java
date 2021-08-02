@@ -1,4 +1,4 @@
-package com.hito.am.web.app.models;
+package com.hito.am.web.app.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -22,7 +22,7 @@ public class Cartera implements Serializable{
 	private static final long serialVersionUID = -6508775497172275580L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer I_Cartera_Comportamiento; 
 	
 	@Temporal(TemporalType.DATE)

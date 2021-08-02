@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<body>
+<th:block th:fragment="footer">
+<footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="http://hito.com.mx/cenco">Ir a Cenco</a>
+        </p>
+        <p>Sitio local &copy; HITO Servicing</p>
+        <!-- <span sec:authorize="isAuthenticated()" style="display: inline-block;">
+                    | Logged user: <span sec:authentication="name"></span> |
+                    Roles: <span sec:authentication="principal.authorities"></span> |
+                    <a th:href="@{/logout}">Sign Out</a>
+                </span> 
+        -->
+      </div>
+    </footer>
+  </th:block>
+</body>
+</html>
