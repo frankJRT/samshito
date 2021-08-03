@@ -1,10 +1,6 @@
 package com.hito.am.web.app.services;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -19,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.hito.am.web.app.models.dao.IPeriodoDao;
 import com.hito.am.web.app.models.entity.Periodo;
+import com.hito.am.web.app.models.model.ModelPenalizacionesProcess;
 
 @Service
 public class PenalizacionesService {
@@ -42,10 +39,10 @@ public class PenalizacionesService {
 		return periodos.getContent();
 	}
 
-	public String callPythonProcess() {
-		
-		pyhtonService.ejecuteScript(pathPenalizaciones1);
-		return null;
+	public String callPythonProcess(ModelPenalizacionesProcess modelPenalizacionesProcess) {
+		System.out.println(pathPenalizaciones1 +" "+modelPenalizacionesProcess.getCartera()+" "+ modelPenalizacionesProcess.getPeriodo());
+		pyhtonService.ejecuteScript(pathPenalizaciones1 +" "+modelPenalizacionesProcess.getCartera()+" "+ modelPenalizacionesProcess.getPeriodo());
+		return "";
 		
 	}
 

@@ -48,10 +48,10 @@ public class PenalizacionesController {
 		System.out.println(modelPenalizacionesProcess.getCartera());
 		System.out.println(modelPenalizacionesProcess.getPeriodo());
 		System.out.println(modelPenalizacionesProcess.getProceso());
-		penalizacionesService.callPythonProcess();
-		model.addObject("modelPenalizacionesProcess", modelPenalizacionesProcess);
-		model.setViewName("/penalizaciones/result");
+		penalizacionesService.callPythonProcess(modelPenalizacionesProcess);
+		//model.addObject("modelPenalizacionesProcess", modelPenalizacionesProcess);
 		
+		model.setViewName("/penalizaciones/result");
 		
 		return model;
 	}

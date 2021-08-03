@@ -24,7 +24,7 @@ public class PythonCallerService {
 	Process mProcess;
 
 	public String ejecuteScript(String pathScript) {
-		logger.info("PythonCallerService : ejecuteScript   " + executerCommand + " " + prodPath + " " + pathScript);
+		logger.info("PythonCallerService : ejecuteScript   " + executerCommand +" "+ prodPath + pathScript);
 		Process process;
 		try {
 			// process = Runtime.getRuntime().exec(new String[] { "python

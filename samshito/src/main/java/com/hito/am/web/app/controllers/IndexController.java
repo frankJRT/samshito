@@ -16,6 +16,7 @@ public class IndexController {
 	// @RequestMapping(path = "/index",method = RequestMethod.GET)
 	@GetMapping({ "/index", "/", "/home" })
 	public String index(Model model) {
+		logger.info("IndexController : indexindex");
 		model.addAttribute("title", " pagina demo");
 		return "index";
 	}
