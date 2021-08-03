@@ -31,6 +31,8 @@ public class CarteraService {
 	@Autowired
 	private CatalogoComportamientoService catalogoComportamientoService;
 
+	
+
 	public List<ModelCartera> getCarteras() {
 		logger.info("CarteraService : getCarteras obtener carteras ");
 		List<ModelCartera> lscarteras = new ArrayList<ModelCartera>();
@@ -68,10 +70,12 @@ public class CarteraService {
 	public List<CatalogoComportamiento> getCatalogos() {
 		return catalogoComportamientoService.getCatalogos();
 	}
-	
-	public List<ElementoCatalogoComportamiento> getElementosCatalogo(Integer cat){
+
+	public List<ElementoCatalogoComportamiento> getElementosCatalogo(Integer cat) {
 		return catalogoComportamientoService.getElementosCatalogo(cat);
 	}
+
+	
 
 	private String findElementoCatalogo(Integer idElemento, List<ElementoCatalogoComportamiento> lsElementos) {
 		logger.info("CarteraService : findElementoCatalogo encontrar el elemento de un catalogo");

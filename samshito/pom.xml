@@ -11,7 +11,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hito.am</groupId>
-	<artifactId>spring-boot-web</artifactId>
+	<artifactId>samshito</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>samshito</name>
 	<description>Proyecto para administracion de los procesos administracion maestra SHF</description>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Carteras</title>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3>Generador de penalizaciones</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<form class="row g-3" th:action="@{/penalizaciones/form}" th:object="${modelPenalizacionesProcess}" method="post">
+					 
+					<div class="col-md-4">
+						<label for="cartera" class="form-label">Cartera</label> 
+						<select	id="cartera" th:field="*{cartera}" class="form-select">
+						<option th:text="${'Todos'}" th:value="${0}"></option>
+							<option th:each="car : ${carteras}"
+								th:text="${car.n_Cartera_Comportamiento_Clave}"
+								th:value="${car.i_Cartera_Comportamiento}" selected></option>
+						</select>
+					</div>
+					
+					<div class="col-md-4">
+						<label for="periodo" class="form-label">Periodo</label> <select
+							id="periodo" th:field="*{periodo}" class="form-select">
+							<option th:each="per : ${periodos}"
+								th:text="${per.i_Periodo}" th:value="${per.i_Periodo}"
+								selected>...</option>
+						</select>
+					</div>
+					
+					<div class="col-md-4">
+						<label for="proceso" class="form-label">Proceso</label> 
+						<select	id="proceso"
+						th:field="*{proceso}"
+						 class="form-select">
+							<option value="pen_1">Reporte Recibido</option>
+						</select>
+					</div>
+					<!-- -->
+					<div class="col-12">
+						<button type="submit" class="btn btn-primary">Generar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid"></div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
